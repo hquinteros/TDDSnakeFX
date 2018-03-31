@@ -7,6 +7,13 @@
     <groupId>io.github.hquinteros</groupId>
     <artifactId>TDD-SnakeFX</artifactId>
     <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
