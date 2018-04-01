@@ -19,7 +19,9 @@ public class SnakeApp extends GameApplication {
     protected void initSettings(GameSettings settings) {
         settings.setCloseConfirmation(false);
         settings.setProfilingEnabled(false);
-        settings.setMenuEnabled(false);
+        settings.setMenuEnabled(true);
+        settings.setMenuKey(KeyCode.ESCAPE);
+        settings.setTitle("Classic Snake");
         settings.setIntroEnabled(false);
         settings.setFullScreen(false);
 
@@ -36,10 +38,12 @@ public class SnakeApp extends GameApplication {
         onKeyDown(KeyCode.A, "LEFT", () -> game.setDirection(Direction.LEFT));
         onKeyDown(KeyCode.D, "RIGHT", () -> game.setDirection(Direction.RIGHT));
     }
+    private double speed = 0.15;
 
     @Override
     protected void initGame() {
         game = new Game(GAME_SIZE);
+        speed = 0.155 - getGameState().getGameDifficulty().ordinal() * .041;
     }
 
     private double t = 0;
@@ -48,12 +52,12 @@ public class SnakeApp extends GameApplication {
     protected void onUpdate(double tpf) {
         t += tpf;
 
-        if (t > 0.15) {
+        if (t > speed) {
             t = 0;
             game.update();
 
             if (game.isOver()) {
-                getDisplay().showMessageBox("Game over", this::exit);
+                getDisplay().showMessageBox("Game over", this::startNewGame);
             }
         }
 

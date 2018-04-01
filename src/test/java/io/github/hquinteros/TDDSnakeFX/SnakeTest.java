@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class SnakeTest {
-    //
 
-    //can use a BeforeEach to initialize snake to a new snake on every test without having to write it manually
-    //for every test
 
+    /*
     @Test
     void testSnakeMoves() {
         Snake snake = new Snake(new Point2D(0, 0));
@@ -28,6 +26,7 @@ class SnakeTest {
 
         assertThat(snake.getHeadPosition(), is(new Point2D(1, 0)));
     }
+    */
 
     @ParameterizedTest
     @EnumSource(Direction.class)

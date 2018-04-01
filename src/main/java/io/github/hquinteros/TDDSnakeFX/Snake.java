@@ -11,6 +11,8 @@ public class Snake {
     private Point2D previousTailPosition;
     private List<Point2D> body = new ArrayList<>();
 
+
+
     public Snake(Point2D headPosition){
         this.headPosition = headPosition;
         this.previousTailPosition = headPosition;
