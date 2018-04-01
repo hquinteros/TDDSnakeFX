@@ -22,4 +22,8 @@ public class Snake {
     public Point2D getPosition() {
         return position;
     }
+
+    public boolean isCollidingWith(Food food) {
+        return position.equals(food.getPosition());
+    }
 }
